@@ -5,11 +5,15 @@ Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-tags'
 Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'edkolev/erlang-motions.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 filetype plugin indent on
 
 set nofoldenable
+set number
+set relativenumber
 
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
 autocmd BufEnter rebar.config*   if &filetype == '' | setlocal filetype=erlang | endif
