@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -16,6 +17,7 @@ filetype plugin indent on
 set nofoldenable "disable folding
 set number "display line numbers
 set relativenumber "display relative line numbers
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.beam "do not suggest this files in explore :e command
 
 "Erlang files
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
@@ -27,8 +29,14 @@ autocmd BufEnter *.md        if &filetype == '' | setlocal filetype=markdown | e
 "use 4 spaces for tab in Erlang files
 autocmd FileType erlang   setlocal foldmethod=syntax expandtab tabstop=4 shiftwidth=4 textwidth=0
 
-"automatically remove trailing whitespace 
+"automatically remove trailing whitespace
 autocmd BufWritePre * StripWhitespace
 
 "change default gitgutter update time
 set updatetime=1000
+
+let g:ctrlp_custom_ignore = {
+			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+			\ 'file': '\v\.(exe|so|dll)$',
+			\ 'link': 'some_bad_symbolic_links',
+			\ }
