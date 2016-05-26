@@ -7,6 +7,7 @@ Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'edkolev/erlang-motions.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 filetype plugin indent on
@@ -21,4 +22,6 @@ autocmd BufEnter app.config,sys.config   if &filetype == '' | setlocal filetype=
 autocmd BufEnter *.md        if &filetype == '' | setlocal filetype=markdown | endif
 
 autocmd FileType erlang   setlocal foldmethod=syntax expandtab tabstop=4 shiftwidth=4 textwidth=0
+
+autocmd BufWritePre * StripWhitespace
 
