@@ -36,7 +36,7 @@ autocmd BufWritePre * StripWhitespace
 set updatetime=1000
 
 let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+			\ 'dir':  '\v([\/]\.(git|hg|svn)$)|(Mnesia.*)',
 			\ 'file': '\v\.(exe|so|dll)$',
 			\ 'link': 'some_bad_symbolic_links',
 			\ }
