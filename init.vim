@@ -11,6 +11,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 filetype plugin indent on
