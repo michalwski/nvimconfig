@@ -10,6 +10,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 filetype plugin indent on
@@ -18,6 +19,10 @@ set nofoldenable "disable folding
 set number "display line numbers
 set relativenumber "display relative line numbers
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.beam "do not suggest this files in explore :e command
+set background=dark "tells vim the background has dark color
+set nowrap "do not wrap long lines
+set title "set the window title
+set colorcolumn=80
 
 "Erlang files
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
