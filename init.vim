@@ -29,8 +29,6 @@ set colorcolumn=80
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
 autocmd BufEnter rebar.config*   if &filetype == '' | setlocal filetype=erlang | endif
 autocmd BufEnter app.config,sys.config   if &filetype == '' | setlocal filetype=erlang | endif
-"Markdown files
-autocmd BufEnter *.md        if &filetype == '' | setlocal filetype=markdown | endif
 
 "use 4 spaces for tab in Erlang files
 autocmd FileType erlang   setlocal foldmethod=syntax expandtab tabstop=4 shiftwidth=4 textwidth=0
