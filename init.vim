@@ -12,6 +12,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'mileszs/ack.vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 filetype plugin indent on
@@ -24,6 +25,8 @@ set background=dark "tells vim the background has dark color
 set nowrap "do not wrap long lines
 set title "set the window title
 set colorcolumn=80
+
+colorscheme solarized
 
 "Erlang files
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
