@@ -6,6 +6,7 @@ Plug 'vim-erlang/vim-erlang-tags'
 Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'edkolev/erlang-motions.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
@@ -27,6 +28,7 @@ set title "set the window title
 set colorcolumn=80
 
 colorscheme solarized
+let g:airline_theme = 'solarized'
 
 "Erlang files
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
