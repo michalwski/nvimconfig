@@ -14,6 +14,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'mileszs/ack.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 filetype plugin indent on
@@ -49,3 +50,7 @@ let g:ctrlp_custom_ignore = {
 			\ 'file': '\v\.(exe|so|dll)$',
 			\ 'link': 'some_bad_symbolic_links',
 			\ }
+
+let g:NERDTreeIgnore = ['\~$','\.beam$']
+let g:NERDTreeChDirMode = 2
+
