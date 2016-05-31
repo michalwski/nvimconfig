@@ -52,6 +52,8 @@ let g:ctrlp_custom_ignore = {
 			\ 'link': 'some_bad_symbolic_links',
 			\ }
 
-let g:NERDTreeIgnore = ['\~$','\.beam$']
-let g:NERDTreeChDirMode = 2
+let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
+let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
