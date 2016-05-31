@@ -15,6 +15,7 @@ Plug 'tpope/vim-commentary'
 Plug 'mileszs/ack.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 filetype plugin indent on
