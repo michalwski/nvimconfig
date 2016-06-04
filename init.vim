@@ -57,7 +57,6 @@ let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:ctrlp_use_caching = 0
 if executable('ag')
 	set grepprg=ag\ --nogroup\ --nocolor
 
@@ -68,4 +67,14 @@ else
 				\ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
 				\ }
 endif
+
+let mapleader = "," " , is the leader char
+inoremap <Leader>, <C-x><C-o> "map ,, to open completion
+imap <C-w> <C-o><C-w>
+
+let mapleader = "\<Space>" " Space is the leader now
+nnoremap <Leader>o :CtrlP<CR> " Space o opens CtrlP search window
+nnoremap <Leader>w :w<CR> " Space w saves the file
+nnoremap <Leader>t :NERDTreeToggle<CR> "toggles the NERDTree
+nnoremap <Leader>f :NERDTreeFocus<CR> "moves cursor to the NERDTree window
 
