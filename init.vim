@@ -29,7 +29,8 @@ set nowrap "do not wrap long lines
 set title "set the window title
 set colorcolumn=80
 
-colorscheme solarized
+"Set colorschemes
+silent! colorscheme solarized
 let g:airline_theme = 'solarized'
 
 "Erlang files
