@@ -78,3 +78,13 @@ nnoremap <Leader>w :w<CR> " Space w saves the file
 nnoremap <Leader>t :NERDTreeToggle<CR> "toggles the NERDTree
 nnoremap <Leader>f :NERDTreeFocus<CR> "moves cursor to the NERDTree window
 
+" Autocorrect often misspelled commands/words
+cabbr Q q
+cabbr W w
+cabbr WQ wq
+cabbr Wq wq
+cabbr Ed ed
+cabbr Qall qall
+cabbr Wqall wqall
+cabbr E Explore
+cabbr B b
