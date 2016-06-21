@@ -70,14 +70,19 @@ else
 endif
 
 let mapleader = "," " , is the leader char
-inoremap <Leader>, <C-x><C-o> "map ,, to open completion
+"map ,, to open completion
+inoremap <Leader>, <C-x><C-o>
 imap <C-w> <C-o><C-w>
 
 let mapleader = "\<Space>" " Space is the leader now
-nnoremap <Leader>o :CtrlP<CR> " Space o opens CtrlP search window
-nnoremap <Leader>w :w<CR> " Space w saves the file
-nnoremap <Leader>t :NERDTreeToggle<CR> "toggles the NERDTree
-nnoremap <Leader>f :NERDTreeFocus<CR> "moves cursor to the NERDTree window
+" Space o opens CtrlP search window
+nnoremap <Leader>o :CtrlP<CR>
+" Space w saves the file
+nnoremap <Leader>w :w<CR>
+"toggles the NERDTree
+nnoremap <Leader>t :NERDTreeToggle<CR>
+"moves cursor to the NERDTree window
+nnoremap <Leader>f :NERDTreeFocus<CR>
 
 " Autocorrect often misspelled commands/words
 cabbr Q q
