@@ -4,6 +4,7 @@ Plug 'vim-erlang/vim-erlang-compiler'
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-tags'
 Plug 'vim-erlang/vim-erlang-omnicomplete'
+Plug 'vim-erlang/vim-compot'
 Plug 'edkolev/erlang-motions.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -15,7 +16,9 @@ Plug 'tpope/vim-commentary'
 Plug 'mileszs/ack.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 filetype plugin indent on
@@ -28,6 +31,7 @@ set background=dark "tells vim the background has dark color
 set nowrap "do not wrap long lines
 set title "set the window title
 set colorcolumn=80
+set ttimeoutlen=-1
 
 "Set colorschemes
 silent! colorscheme solarized
@@ -56,6 +60,16 @@ let g:ctrlp_custom_ignore = {
 let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
 let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
 
+"configure syntastic
+let g:syntastic_enable_elixir_checker = 1 "enable for elixir
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+			\ "mode": "active",
+			\ "passive_filetypes": ["erlang"] }
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 if executable('ag')
@@ -83,6 +97,10 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR>
 "moves cursor to the NERDTree window
 nnoremap <Leader>f :NERDTreeFocus<CR>
+"opens window with location list for current file
+nnoremap <Leader>e :lopen<CR>
+
+tnoremap <Esc> <C-\><C-n>
 
 " Autocorrect often misspelled commands/words
 cabbr Q q
