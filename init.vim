@@ -53,9 +53,10 @@ set updatetime=1000
 
 let g:ctrlp_custom_ignore = {
 			\ 'dir':  '\v([\/]\.(git|hg|svn)$)|(Mnesia.*)',
-			\ 'file': '\v\.(exe|so|dll)$',
+			\ 'file': '\v\.(exe|so|dll|beam)$',
 			\ 'link': 'some_bad_symbolic_links',
 			\ }
+let g:ctrlp_working_path_mode = ''
 
 let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
 let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
@@ -75,7 +76,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 if executable('ag')
 	set grepprg=ag\ --nogroup\ --nocolor
 
-	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+	let g:ctrlp_user_command = 'ag %s -l -U --nocolor -g ""'
 else
 	let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 	let g:ctrlp_prompt_mappings = {
